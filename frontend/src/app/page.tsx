@@ -135,6 +135,124 @@ const ROW_3_NEWS: Article[] = [
   }
 ];
 
+// --- 6. CATEGORIES TRIPLE COLUMN SECTION (জাতীয় | রাজনীতি | আন্তর্জাতিক) ---
+const CAT_NATIONAL_FEATURED: Article = {
+  id: 16,
+  slug: "public-administration-suspended",
+  title: "জনপ্রশাসনে ন্যস্ত হওয়া সেই দুই কর্মকর্তাকে সাময়িক বরখাস্ত",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_NATIONAL_LIST: Article[] = [
+  {
+    id: 17,
+    slug: "libya-return-bangladeshis",
+    title: "লিবিয়া থেকে ফেরানো হলো আরও ১৭৪ বাংলাদেশিকে",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 18,
+    slug: "fuel-price-hike-reasons",
+    title: "জ্বালানি তেলের দাম বাড়ানোর কারণ জানালেন তথ্যমন্ত্রী",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 19,
+    slug: "child-deaths-investigation-report",
+    title: "৬ শিশুর মৃত্যুর ঘটনায় ৩ দিনের মধ্যে তদন্ত প্রতিবেদন: স্বাস্থ্যমন্ত্রী",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1521791136368-1a46827d0af1?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 20,
+    slug: "cht-minister-resignation",
+    title: "পদত্যাগ করলেন পার্বত্য চট্টগ্রাম বিষয়ক মন্ত্রী",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_POLITICS_FEATURED: Article = {
+  id: 21,
+  slug: "rabik-cabinet-reshuffle",
+  title: "সরানো হচ্ছে শেখ রবিককে, পাঁচ মন্ত্রণালয়ে আসতে পারে নতুন মুখ",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1555848962-6e79363ec18f?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_POLITICS_LIST: Article[] = [
+  {
+    id: 22,
+    slug: "tofail-ahmed-senior-leader",
+    title: "মারা গেছেন আওয়ামী লীগের বর্ষীয়ান নেতা তোফায়েল আহমেদ",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 23,
+    slug: "jamaat-chief-fuel-price",
+    title: "জ্বালানি তেলের দাম বৃদ্ধিকে ধোঁকাবাজি বললেন জামায়াত আমির",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 24,
+    slug: "rizvi-jamaat-refugees",
+    title: "অনেক গুন্ডা চাঁদাবাজও জামায়াতে আশ্রয় নিয়েছে: রিজভী",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 25,
+    slug: "hasina-letter-un-challenge",
+    title: "জাতিসংঘকে চ্যালেঞ্জ করে শেখ হাসিনার চিঠি",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_INT_FEATURED: Article = {
+  id: 26,
+  slug: "lebanon-ceasefire-accord-iran",
+  title: "চুক্তিতে লেবানন যুদ্ধবিরতির বাস্তবায়ন থাকতে হবে: ইরান",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_INT_LIST: Article[] = [
+  {
+    id: 27,
+    slug: "gold-price-drop-global",
+    title: "দাম কমেছে স্বর্ণের",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 28,
+    slug: "myanmar-blast-casualties",
+    title: "মিয়ানমারে ভয়াবহ বিস্ফোরণে নিহত ৫৫, আহত বহু মানুষ",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 29,
+    slug: "trump-nuclear-weapons-iran",
+    title: "ইরান পারমাণবিক অস্ত্র তৈরি করবে না: ট্রাম্প",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1540747737956-37872f767104?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 30,
+    slug: "us-drone-shot-iran",
+    title: "মার্কিন ড্রোন ভূপাতিতের দাবি ইরানের",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f9fa] text-zinc-800 font-sans leading-normal">
@@ -151,7 +269,6 @@ export default function Home() {
         <div className="w-full bg-[#1b5e9e] border border-blue-900 overflow-hidden shadow-sm aspect-[12/1.4] flex items-center justify-between px-6 sm:px-12 select-none relative rounded">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400/10 via-transparent to-transparent pointer-events-none"></div>
           <div className="flex items-center gap-4 text-white">
-            {/* White mock bank logo representation */}
             <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center font-bold text-xs shrink-0 select-none">
               SIB
             </div>
@@ -335,7 +452,6 @@ export default function Home() {
 
         {/* --- 6. FOOTER DUAL BANNER AD (AT THE BOTTOM OF FEATURE SECTION) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
-          {/* Sonali Paper & Board Mills Ad */}
           <div className="bg-[#f0f0f2] border border-zinc-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none h-16">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-zinc-400 flex items-center justify-center font-bold text-white text-xs select-none">SP</div>
@@ -347,7 +463,6 @@ export default function Home() {
             <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-bold bg-white px-1.5 py-0.5 rounded shadow-sm border border-zinc-100">AD</span>
           </div>
 
-          {/* Shahjalal Equity Management Ad */}
           <div className="bg-[#0b5c3a] border border-emerald-800 rounded-xl p-4 flex items-center justify-between shadow-sm select-none text-white h-16">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-[#0b5c3a] text-xs select-none">SE</div>
@@ -357,6 +472,152 @@ export default function Home() {
               </div>
             </div>
             <span className="text-[8px] uppercase tracking-wider text-emerald-300 font-bold bg-black/20 px-1.5 py-0.5 rounded border border-emerald-700/50">AD</span>
+          </div>
+        </div>
+
+        {/* --- 7. DYNAMIC CATEGORIES SECTION (জাতীয় | রাজনীতি | আন্তর্জাতিক) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6 border-t border-zinc-200">
+          
+          {/* Column 1: জাতীয় (National) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                জাতীয়
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured news with text overlay inside the image */}
+              <Link href={`/articles/${CAT_NATIONAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+                <img src={CAT_NATIONAL_FEATURED.imageUrl} alt={CAT_NATIONAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_NATIONAL_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List news */}
+              <div className="space-y-3 pt-2">
+                {CAT_NATIONAL_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_NATIONAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2: রাজনীতি (Politics) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                রাজনীতি
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured news with text overlay inside the image */}
+              <Link href={`/articles/${CAT_POLITICS_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+                <img src={CAT_POLITICS_FEATURED.imageUrl} alt={CAT_POLITICS_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_POLITICS_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List news */}
+              <div className="space-y-3 pt-2">
+                {CAT_POLITICS_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_POLITICS_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3: আন্তর্জাতিক (International) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                আন্তর্জাতিক
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured news with text overlay inside the image */}
+              <Link href={`/articles/${CAT_INT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+                <img src={CAT_INT_FEATURED.imageUrl} alt={CAT_INT_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_INT_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List news */}
+              <div className="space-y-3 pt-2">
+                {CAT_INT_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_INT_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* --- 8. BOTTOM AD DUAL BANNER (UNDER CATEGORIES) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
+          {/* Galaxy Flying Academy Ad */}
+          <div className="bg-[#eef2f7] border border-zinc-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none h-16">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-[#1b5e9e] flex items-center justify-center font-black text-white text-xs select-none">GFA</div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-xs sm:text-sm text-zinc-950 leading-tight">Galaxy Flying Academy</span>
+                <span className="text-[9px] text-[#cc0000] font-black mt-0.5 uppercase tracking-widest">ADMISSION GOING ON</span>
+              </div>
+            </div>
+            <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-bold bg-white px-1.5 py-0.5 rounded border border-zinc-100">AD</span>
+          </div>
+
+          {/* Sonali Tissue Ad */}
+          <div className="bg-[#78b73e] border border-emerald-600 rounded-xl p-4 flex items-center justify-between shadow-sm select-none text-white h-16">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center font-bold text-[#78b73e] text-xs select-none">ST</div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-xs sm:text-sm leading-tight text-white">বাজারে এলো মনকাড়া ডিজাইনের সোনালী টিস্যু</span>
+                <span className="text-[9px] text-green-100 font-medium mt-0.5">সবচেয়ে নরম এবং শক্তিশালী প্রিমিয়াম টিস্যু</span>
+              </div>
+            </div>
+            <span className="text-[8px] uppercase tracking-wider text-emerald-100 font-bold bg-black/20 px-1.5 py-0.5 rounded border border-emerald-700/50">AD</span>
           </div>
         </div>
 
