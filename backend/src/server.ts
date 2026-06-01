@@ -21,12 +21,13 @@ app.use(uploadRouter);
 /* ---------- PUBLIC ROUTES ---------- */
 app.get("/api/articles", async (_req: Request, res: Response) => {
   try {
-    const result = await pool.query("SELECT id, slug, title, excerpt, image_url FROM articles ORDER BY id DESC");
+    const result = await pool.query("SELECT id, slug, title, excerpt, category, image_url FROM articles ORDER BY id DESC");
     const articles = result.rows.map((row) => ({
       id: row.id,
       slug: row.slug,
       title: row.title,
       excerpt: row.excerpt,
+      category: row.category,
       imageUrl: row.image_url,
     }));
     res.json(articles);
@@ -52,6 +53,7 @@ app.get("/api/articles/:slug", async (req: Request, res: Response) => {
       title: row.title,
       excerpt: row.excerpt,
       content: row.content,
+      category: row.category,
       imageUrl: row.image_url,
     };
     res.json(article);
@@ -62,12 +64,12 @@ app.get("/api/articles/:slug", async (req: Request, res: Response) => {
 
 /* ---------- ADMIN ROUTES (protected) ---------- */
 app.post("/api/articles", adminAuth, async (req: Request, res: Response) => {
-  const { slug, title, excerpt, content, imageUrl } = req.body;
+  const { slug, title, excerpt, content, category, imageUrl } = req.body;
   try {
     const result = await pool.query(
-      `INSERT INTO articles (slug, title, excerpt, content, image_url)
-       VALUES ($1, $2, $3, $4, $5) RETURNING id`,
-      [slug, title, excerpt, content, imageUrl ?? null]
+      `INSERT INTO articles (slug, title, excerpt, content, category, image_url)
+       VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`,
+      [slug, title, excerpt, content, category ?? 'জাতীয়', imageUrl ?? null]
     );
     res.json({ message: "Article created", id: result.rows[0].id });
   } catch (error: any) {
