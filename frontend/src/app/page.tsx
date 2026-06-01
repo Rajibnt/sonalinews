@@ -91,7 +91,7 @@ const ROW_2_NEWS: Article[] = [
     id: 10,
     slug: "nbr-dollar-alert",
     title: "এনবিআরকে ডলার সতর্কতা",
-    excerpt: "ডলার সংকট মোকাবেলায় জাতীয় রাজস্ব বোর্ডকে (এনবিআর) বিলাসবহুল আমদানিতে কঠোর নজরদারির নির্দেশ।",
+    excerpt: "ডলার সংকট মোকাবেলালায় জাতীয় রাজস্ব বোর্ডকে (এনবিআর) বিলাসবহুল আমদানিতে কঠোর নজরদারির নির্দেশ।",
     imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=350&q=80"
   },
   {
@@ -322,7 +322,7 @@ export default function Home() {
               SIB
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह্‌जालाल इस्लामी बैंक पीएलसी</span>
+              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह্‌जालाल इस्लामी ব্যাংক পিএলসি</span>
               <span className="text-[10px] sm:text-xs text-blue-100 font-medium mt-0.5">Shahjalal Islami Bank PLC – শরীয়াহ্‌ ভিত্তিক আধুনিক ব্যাংকিং</span>
             </div>
           </div>
@@ -639,7 +639,6 @@ export default function Home() {
 
         {/* --- 8. BOTTOM AD DUAL BANNER (UNDER CATEGORIES) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
-          {/* Galaxy Flying Academy Ad */}
           <div className="bg-[#eef2f7] border border-zinc-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none h-16">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-[#1b5e9e] flex items-center justify-center font-black text-white text-xs select-none">GFA</div>
@@ -651,7 +650,6 @@ export default function Home() {
             <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-bold bg-white px-1.5 py-0.5 rounded border border-zinc-100">AD</span>
           </div>
 
-          {/* Sonali Tissue Ad */}
           <div className="bg-[#78b73e] border border-emerald-600 rounded-xl p-4 flex items-center justify-between shadow-sm select-none text-white h-16">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center font-bold text-[#78b73e] text-xs select-none">ST</div>
@@ -676,16 +674,19 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              <div className="space-y-3.5">
+              <div className="space-y-3">
                 {CAT_ECONOMY_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
                     href={`/articles/${item.slug}`} 
-                    className={`flex gap-3 group items-center py-2.5 ${
+                    className={`flex gap-3 group items-center py-3.5 ${
                       index !== CAT_ECONOMY_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
                   >
-                    <img src={item.imageUrl} alt={item.title} className="w-16 h-12 object-cover rounded border border-zinc-200 shrink-0" />
+                    {/* Soft grey background for Islami Bank and NBR thumbnails */}
+                    <div className="w-16 h-12 bg-zinc-50 border border-zinc-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
+                      <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+                    </div>
                     <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-3">
                       {item.title}
                     </h5>
@@ -705,58 +706,96 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-2 gap-3">
-              {/* Widget 1: DSE Live Ticker Table */}
-              <div className="bg-gradient-to-b from-sky-50 to-blue-100 border border-blue-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden select-none">
-                <div className="text-[8px] text-zinc-500 font-bold border-b border-blue-200 pb-1">
-                  Last update on: Jun 01, 2026
+              {/* Widget 1: DSE Live Ticker Table (100% precise cloning) */}
+              <div className="bg-[#fcfcfc] border border-zinc-200 rounded-xl shadow-sm flex flex-col justify-between overflow-hidden select-none text-[9px] font-bold">
+                {/* Dark Blue Header */}
+                <div className="bg-[#1b5e9e] text-white text-center py-1.5 font-bold text-[8px] tracking-wide border-b border-blue-900">
+                  Last update on Jun 01, 2026 at 2:30 PM
                 </div>
-                <div className="text-[9px] font-bold text-left space-y-1 my-1">
-                  <div className="flex justify-between border-b border-blue-100 pb-0.5">
-                    <span>DSEX Index</span>
-                    <span className="text-emerald-700">6,244.18 (+0.56%)</span>
+                {/* Indexes table body */}
+                <div className="px-2 py-1 space-y-1 text-[8px]">
+                  <div className="flex justify-between border-b border-zinc-100 pb-0.5 items-center">
+                    <span className="text-zinc-600">DSEX Index</span>
+                    <span className="text-zinc-800 font-extrabold">6372.63439</span>
+                    <span className="text-emerald-600 font-extrabold flex items-center">38.78475 🟩</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>DS30 Index</span>
-                    <span className="text-emerald-700">2,149.20 (+0.32%)</span>
+                  <div className="flex justify-between border-b border-zinc-100 pb-0.5 items-center">
+                    <span className="text-zinc-600">DSES Index</span>
+                    <span className="text-zinc-800 font-extrabold">1366.41505</span>
+                    <span className="text-emerald-600 font-extrabold flex items-center">4.92822 🟩</span>
+                  </div>
+                  <div className="flex justify-between pb-0.5 items-center">
+                    <span className="text-zinc-600">DS30 Index</span>
+                    <span className="text-zinc-800 font-extrabold">2044.59769</span>
+                    <span className="text-emerald-600 font-extrabold flex items-center">13.70808 🟩</span>
                   </div>
                 </div>
-                <div className="bg-red-500 text-white text-[8px] font-black py-0.5 rounded uppercase tracking-wider block">
-                  ঈদ পরবর্তী প্রথম দিন
+                {/* Total Statistics row */}
+                <div className="bg-sky-50/50 border-y border-zinc-100 py-1 text-[7px] text-zinc-500 flex justify-between px-2 font-semibold">
+                  <span>Trade: 227730</span>
+                  <span>Volume: 328m</span>
+                  <span>Value: 9123m</span>
                 </div>
-                <h5 className="text-[9px] font-black text-zinc-950 mt-1 hover:text-[#cc0000] leading-tight">
-                  শেয়ারবাজারে বেড়েছে সূচক ও লেনদেন
-                </h5>
+                {/* Issues state */}
+                <div className="bg-zinc-50 py-1 text-[7px] text-zinc-400 flex justify-between px-2 font-semibold border-b border-zinc-100">
+                  <span className="text-emerald-600">Adv: 179</span>
+                  <span className="text-rose-600">Dec: 162</span>
+                  <span>Unch: 55</span>
+                </div>
+                {/* Bottom title & text */}
+                <div className="p-2 space-y-1">
+                  <div className="text-[#cc0000] text-[8px] font-black uppercase tracking-wider block">
+                    ঈদ পরবর্তী প্রথম কার্যদিবস
+                  </div>
+                  <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight">
+                    শেয়ারবাজারে বেড়েছে সূচক ও লেনদেন
+                  </h5>
+                </div>
               </div>
 
-              {/* Widget 2: Maksons Spinning Mills */}
-              <div className="bg-white border border-zinc-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden group select-none">
-                <div className="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center font-black text-[#cc0000] text-xs mx-auto">M</div>
-                <span className="text-[8px] text-zinc-400 font-semibold block">Maksons Spinning Mills</span>
-                <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
-                  অর্থনৈতিক অঞ্চলের ১০ একর শিল্প প্লট ছাড়ছে ম্যাকসন্স স্পিনিং
-                </h5>
+              {/* Widget 2: Maksons Spinning Mills (with inner divider border) */}
+              <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group">
+                <div className="bg-[#fafafa] border-b border-zinc-100 py-4 flex flex-col justify-center items-center h-20 shrink-0 select-none">
+                  {/* Red round letter M logo representation */}
+                  <div className="w-8 h-8 rounded-full border border-red-500 flex items-center justify-center font-black text-[#cc0000] text-sm bg-white shadow-sm">M</div>
+                  <span className="text-[7px] font-extrabold text-zinc-400 mt-1 uppercase tracking-wider">Maksons Spinning</span>
+                </div>
+                <div className="p-2 flex-grow flex items-center justify-center bg-white">
+                  <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
+                    অর্থনৈতিক অঞ্চলের ১০ একর শিল্প প্লট ছাড়ছে ম্যাকসন্স স্পিনিং
+                  </h5>
+                </div>
               </div>
 
-              {/* Widget 3: British American Tobacco */}
-              <div className="bg-white border border-zinc-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden group select-none">
-                <div className="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center font-bold text-amber-500 text-xs mx-auto">🍁</div>
-                <span className="text-[8px] text-zinc-400 font-semibold block">BAT Bangladesh</span>
-                <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
-                  ৩০ বিলিয়ন ডলারের জালিয়াতি ও পাচারের অভিযোগে বিএটিবির বিরুদ্ধে অনুসন্ধান
-                </h5>
+              {/* Widget 3: British American Tobacco (with inner divider border) */}
+              <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group">
+                <div className="bg-[#fafafa] border-b border-zinc-100 py-4 flex flex-col justify-center items-center h-20 shrink-0 select-none">
+                  {/* Gold leaves representation */}
+                  <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center font-black text-amber-500 text-sm border border-amber-200 shadow-sm">🍁</div>
+                  <span className="text-[7px] font-extrabold text-zinc-400 mt-1 uppercase tracking-wider">BAT Bangladesh</span>
+                </div>
+                <div className="p-2 flex-grow flex items-center justify-center bg-white">
+                  <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
+                    ৩০ বিলিয়ন ডলারের জালিয়াতি ও পাচারের অভিযোগে বিএটিবির বিরুদ্ধে অনুসন্ধান
+                  </h5>
+                </div>
               </div>
 
-              {/* Widget 4: Holiday Desk office */}
-              <div className="bg-white border border-zinc-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=150&q=80" alt="Office" className="w-full h-10 object-cover rounded border border-zinc-100" />
-                <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
-                  সোমবার থেকে ব্যাংক ও শেয়ারবাজারে ঈদের ছুটি শুরু
-                </h5>
+              {/* Widget 4: Holiday Desk office (with inner divider border) */}
+              <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group">
+                <div className="bg-zinc-200 border-b border-zinc-100 h-20 shrink-0 overflow-hidden relative select-none">
+                  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=150&q=80" alt="Office" className="w-full h-full object-cover" />
+                </div>
+                <div className="p-2 flex-grow flex items-center justify-center bg-white">
+                  <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
+                    সোমবার থেকে ব্যাংক ও শেয়ারবাজারে ঈদের ছুটি শুরু
+                  </h5>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Column 3: সাক্ষাৎকার (Interview List & Landscape Ad) */}
+          {/* Column 3: সাক্ষাৎকার (Interview List & Megaphone Blue Ad) */}
           <div className="space-y-4">
             <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
               <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
@@ -767,7 +806,7 @@ export default function Home() {
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               
               {/* Interview stacked list */}
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {CAT_INTERVIEW_LIST.map((item, idx) => (
                   <Link 
                     key={item.id}
@@ -779,7 +818,7 @@ export default function Home() {
                     <img src={item.imageUrl} alt={item.title} className="w-12 h-12 rounded-full object-cover border border-zinc-200 shrink-0 shadow-sm" />
                     <div className="space-y-0.5">
                       {item.label && (
-                        <span className="text-[9px] font-black text-rose-600 block">{item.label}</span>
+                        <span className="text-[9px] font-black text-[#cc0000] block">{item.label}</span>
                       )}
                       <h5 className="text-xs font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
                         {item.title}
@@ -789,12 +828,20 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Clean Blue Block Ad Placeholder (Ad size 300x220px) matching screenshot */}
-              <div className="bg-gradient-to-b from-sky-950 to-slate-900 border border-slate-800 text-white rounded-xl p-6 text-center select-none shadow-sm aspect-[300/220] flex flex-col justify-center items-center gap-1.5 relative overflow-hidden my-1">
+              {/* Blue ad block with megaphone icon on the corner */}
+              <div className="bg-gradient-to-b from-[#0b3c5d] to-[#0a2f4a] border border-[#092438] text-white rounded-xl p-5 text-center select-none shadow-md aspect-[300/215] flex flex-col justify-center items-center gap-1.5 relative overflow-hidden my-1">
                 <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
-                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-extrabold">Space for Advertisement</div>
-                <h4 className="font-extrabold text-sm sm:text-base text-sky-400 tracking-wide uppercase">Ad size 300X220px</h4>
-                <div className="text-[9px] text-zinc-500 font-semibold mt-1">হটলাইন: ০১৭০০৯২২৫৫৭</div>
+                
+                {/* megphone white icon representation */}
+                <div className="absolute bottom-2 left-2 text-white/10 w-16 h-16 flex items-center justify-center rotate-[15deg]">
+                  <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                  </svg>
+                </div>
+
+                <div className="text-[8px] uppercase tracking-wider text-sky-300/80 font-extrabold">Space for Advertisement</div>
+                <h4 className="font-extrabold text-sm sm:text-base text-white tracking-wide uppercase">Ad size 300X220px</h4>
+                <div className="text-[10px] text-sky-200/60 font-semibold mt-1">০১৭০০৯২২৫৫৭</div>
               </div>
 
             </div>
