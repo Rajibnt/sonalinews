@@ -10,6 +10,7 @@ type Article = {
   title: string;
   excerpt: string;
   imageUrl: string;
+  label?: string;
 };
 
 // 1. Hero Left Column: 5 articles matching the screenshot
@@ -366,6 +367,125 @@ const OPINION_LIST_ITEM = {
   excerpt: ""
 };
 
+// --- 11. FIFTH SECTION (সোনালী বিশেষ | আদালত | রাজধানী) DATA matching the screenshot
+const CAT_SPECIAL_FEATURED: Article = {
+  id: 45,
+  slug: "shahjalal-bank-mosleh-uddin",
+  title: "২৫ বছরের ইতিহাসে খুব ভালো অবস্থায় শাহজালাল ইসলামী ব্যাংক: মোসলেহ্‌ উদ্দিন আহমেদ",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_SPECIAL_LIST: Article[] = [
+  {
+    id: 46,
+    slug: "sujon-miah-dreaming",
+    title: "সংগ্রামের শহরে স্বপ্ন বুনছেন সুজন মিয়া",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 47,
+    slug: "measles-vaccine-risk",
+    title: "হামের টিকা বন্ধনা ও অপুষ্টিতে বাড়ছে মৃত্যু ঝুঁকি",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 48,
+    slug: "jamaat-deputy-speaker-role",
+    title: "জুলাই সনদের রূপরেখা ছাড়া ডেপুটি স্পিকার পদ নেবে না জামায়াত",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 49,
+    slug: "broiler-chicken-fish-market",
+    title: "মাছ-মাংসের বাজার স্থিতিশীল, কিছুটা কমেছে ব্রয়লার দাম",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_COURT_FEATURED: Article = {
+  id: 50,
+  slug: "ramisa-murder-dollar",
+  title: "রামিসা হত্যা: কে এই ডলার?",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_COURT_LIST: Article[] = [
+  {
+    id: 51,
+    slug: "sohel-statement-rape-dollar",
+    title: "আমি ধর্ষণ করছি, রামিসাকে মারছে ডলার: সোহেল",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 52,
+    slug: "sohel-claims-dollar-beat",
+    title: "‘আমি শুধু ধর্ষণ করছি, মারছে ডলার’, দাবি সোহেলের",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 53,
+    slug: "ramisa-trial-tuesday-start",
+    title: "রামিসা ধর্ষণ-হত্যা: সোহেল ও তার স্ত্রীর বিচার শুরু, সাক্ষ্যগ্রহণ মঙ্গলবার",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 54,
+    slug: "ramisa-murder-charge-hearing",
+    title: "রামিসা হত্যা মামলায় চার্জ গঠনের শুনানি আজ",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_CAPITAL_FEATURED: Article = {
+  id: 55,
+  slug: "islami-bank-police-conflict",
+  title: "ইসলামী ব্যাংকের সামনে গ্রাহক-পুলিশ সংঘর্ষ",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=400&q=80",
+  label: "মতিঝিলে রণক্ষেত্র"
+};
+
+const CAT_CAPITAL_LIST: Article[] = [
+  {
+    id: 56,
+    slug: "holiday-return-dhaka-crowd",
+    title: "ছুটি কাটিয়ে স্বস্তিতে ঢাকায় ফিরছে মানুষ",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 57,
+    slug: "ad-din-medical-bakery-minister",
+    title: "আদ-দ্বীন মেডিকেলের ছাদে বেকারি, ক্ষোভ স্বাস্থ্যমন্ত্রীর",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 58,
+    slug: "zoo-donald-trump-care",
+    title: "চিড়িয়াখানায় বিশেষ পরিচর্যায় ‘ডোনাল্ড ট্রাম্প’",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 59,
+    slug: "dscc-administrator-showcause",
+    title: "কিছু কর্মীকে শোকজ করা হয়েছে: ডিএসসিসি প্রশাসক",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f9fa] text-zinc-800 font-sans leading-normal">
@@ -386,7 +506,7 @@ export default function Home() {
               SIB
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह्जालाल इस्लामी बैंक पीएलसी</span>
+              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह्जालाल इस्लामी ব্যাংক পিএলসি</span>
               <span className="text-[10px] sm:text-xs text-blue-100 font-medium mt-0.5">Shahjalal Islami Bank PLC – শরীয়াহ্‌ ভিত্তিক আধুনিক ব্যাংকিং</span>
             </div>
           </div>
@@ -461,7 +581,7 @@ export default function Home() {
             
             {/* Widget 1: National Life Insurance Ad */}
             <div className="bg-gradient-to-b from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 shadow-sm text-center relative select-none">
-              <div className="absolute top-1.5 right-1.5 text-[8px] uppercase tracking-wider text-amber-400 font-bold bg-white/80 px-1 py-0.5 rounded">বিজ্ঞাপন</div>
+              <div className="absolute top-1.5 right-1.5 text-[8px] uppercase tracking-wider text-amber-400 font-bold bg-white/80 px-1.5 py-0.5 rounded">বিজ্ঞাপন</div>
               <div className="space-y-2">
                 <span className="text-3xl font-extrabold text-[#cc0000] block tracking-tighter">৪২</span>
                 <span className="text-zinc-800 text-xs font-extrabold block">বছরের দীপ্ত পথচলা</span>
@@ -471,7 +591,7 @@ export default function Home() {
 
             {/* Widget 2: Shahjalal Bank Blue Widget */}
             <div className="bg-gradient-to-br from-[#1b5e9e] to-indigo-900 border border-blue-900 text-white rounded-xl p-5 shadow-sm text-center relative select-none flex flex-col justify-between h-40">
-              <div className="absolute top-1.5 right-1.5 text-[8px] uppercase tracking-wider text-blue-300 font-bold bg-black/20 px-1 py-0.5 rounded">বিজ্ঞাপন</div>
+              <div className="absolute top-1.5 right-1.5 text-[8px] uppercase tracking-wider text-blue-300 font-bold bg-black/20 px-1.5 py-0.5 rounded">বিজ্ঞাপন</div>
               <span className="text-3xl font-black tracking-tight block">২৩</span>
               <span className="text-xs font-bold block mt-1">সাফল্যের ২৩তম বছর</span>
               <p className="text-[9px] text-blue-200 font-medium mt-1">শাহ্‌জালাল ইসলামী ব্যাংক পিএলসি</p>
@@ -840,7 +960,7 @@ export default function Home() {
                 </div>
                 <div className="p-2 flex-grow flex items-center justify-center bg-white">
                   <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
-                    সোমবার থেকে ব্যাংক ও শেয়ারবাজারে ঈদের ছুটি শুরু
+                    Monday to bank and stock market start holiday
                   </h5>
                 </div>
               </div>
@@ -909,7 +1029,6 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              {/* Top Row: 2 large featured cards side by side */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Link href={`/articles/${SPORTS_TOP_1.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
                   <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
@@ -934,7 +1053,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Bottom Row: 4 small cards side by side */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {SPORTS_BOTTOM_LIST.map((item) => (
                   <Link key={item.id} href={`/articles/${item.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
@@ -963,7 +1081,6 @@ export default function Home() {
 
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               
-              {/* Featured Opinion card with inside-image overlay headline */}
               <Link href={`/articles/${OPINION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={OPINION_FEATURED.imageUrl} alt={OPINION_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
@@ -973,32 +1090,25 @@ export default function Home() {
                 </div>
               </Link>
 
-              {/* Stacked list underneath */}
               <div className="border-t border-zinc-100 pt-3">
                 <Link href={`/articles/${OPINION_LIST_ITEM.slug}`} className="group block text-xs sm:text-sm font-bold text-zinc-800 hover:text-[#cc0000] leading-snug transition">
                   ▪ {OPINION_LIST_ITEM.title}
                 </Link>
               </div>
 
-              {/* Highly Customized Blue Ad Placeholder Box (with Megaphone and Laptop Graphic) */}
               <div className="bg-gradient-to-b from-[#06182c] to-[#0a2644] border border-[#041121] text-white rounded-xl p-5 text-center select-none shadow-md aspect-[300/215] flex flex-col justify-center items-center gap-1.5 relative overflow-hidden my-1">
                 <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
-                
-                {/* 1. megphone white icon representation on bottom left */}
                 <div className="absolute bottom-2 left-2 text-sky-400/25 w-14 h-14 flex items-center justify-center rotate-[15deg]">
                   <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                   </svg>
                 </div>
-
-                {/* 2. Custom CSS device laptop/tablet representation on bottom right */}
                 <div className="absolute bottom-1 right-2 w-14 h-10 border border-zinc-700/50 rounded bg-zinc-800/40 p-0.5 hidden sm:flex flex-col justify-between items-center shadow-inner">
                   <div className="w-12 h-6 border border-zinc-600/30 rounded bg-sky-400/10 flex items-center justify-center text-[5px] font-black text-sky-400 tracking-tighter">
                     YOUR AD
                   </div>
                   <div className="w-14 h-1 bg-zinc-600 rounded-b"></div>
                 </div>
-
                 <div className="text-[8px] uppercase tracking-wider text-sky-300 font-extrabold">Space for Advertisement</div>
                 <h4 className="font-extrabold text-sm sm:text-base text-white tracking-wide uppercase">Ad size 300X220px</h4>
                 <div className="text-[10px] text-sky-200/60 font-semibold mt-1">০১৭০০৯২২৫৫৭</div>
@@ -1011,7 +1121,6 @@ export default function Home() {
 
         {/* --- 11. BOTTOM DUAL AD BANNER (UNDER SPORTS & OPINION) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
-          {/* Galaxy Flying Academy Ad */}
           <div className="bg-[#b3b3df]/40 border border-zinc-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none h-16">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-[#1b5e9e] flex items-center justify-center font-black text-white text-xs select-none">GFA</div>
@@ -1023,7 +1132,6 @@ export default function Home() {
             <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-bold bg-white px-1.5 py-0.5 rounded border border-zinc-100">AD</span>
           </div>
 
-          {/* Fly Galaxy Travels & Tours Ad */}
           <div className="bg-[#c2e2e8]/40 border border-cyan-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none text-cyan-950 h-16">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-[#006a4e] flex items-center justify-center font-bold text-white text-xs select-none">FG</div>
@@ -1034,6 +1142,128 @@ export default function Home() {
             </div>
             <span className="text-[8px] uppercase tracking-wider text-cyan-700 font-bold bg-white px-1.5 py-0.5 rounded border border-cyan-100">AD</span>
           </div>
+        </div>
+
+        {/* --- 12. FIFTH GRID SECTION (সোনালী বিশেষ | আদালত | রাজধানী) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6 border-t border-zinc-200">
+          
+          {/* Column 1: সোনালী বিশেষ (Sonali Special) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                সোনালী বিশেষ
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured overlay card */}
+              <Link href={`/articles/${CAT_SPECIAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+                <img src={CAT_SPECIAL_FEATURED.imageUrl} alt={CAT_SPECIAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_SPECIAL_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List stacked */}
+              <div className="space-y-3 pt-2">
+                {CAT_SPECIAL_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_SPECIAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2: আদালত (Court) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                আদালত
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured overlay card */}
+              <Link href={`/articles/${CAT_COURT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+                <img src={CAT_COURT_FEATURED.imageUrl} alt={CAT_COURT_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_COURT_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List stacked */}
+              <div className="space-y-3 pt-2">
+                {CAT_COURT_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_COURT_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3: রাজধানী (Capital) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                রাজধানী
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured overlay card with red label above headline */}
+              <Link href={`/articles/${CAT_CAPITAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+                <img src={CAT_CAPITAL_FEATURED.imageUrl} alt={CAT_CAPITAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-4">
+                  {CAT_CAPITAL_FEATURED.label && (
+                    <span className="text-[9px] font-black text-rose-500 block mb-0.5 tracking-wide select-none">{CAT_CAPITAL_FEATURED.label}</span>
+                  )}
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_CAPITAL_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List stacked */}
+              <div className="space-y-3 pt-2">
+                {CAT_CAPITAL_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_CAPITAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </main>
