@@ -12,13 +12,26 @@ type Article = {
   imageUrl?: string;
 };
 
-async function getArticle(slug: string): Promise<Article> {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-  const res = await fetch(`${apiUrl}/api/articles/${slug}`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error("Article not found");
-  return res.json();
+async function getArticle(slug: string): Promise<Article | null> {
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    
+    // Safety check to prevent build crashes if URL is invalid/undefined
+    if (!apiUrl || (!apiUrl.startsWith("http://") && !apiUrl.startsWith("https://"))) {
+      console.warn(`API URL is not set or invalid during build. Returning null for article: ${slug}`);
+      return null;
+    }
+    
+    const res = await fetch(`${apiUrl}/api/articles/${slug}`, {
+      next: { revalidate: 10 }
+    });
+    
+    if (!res.ok) return null;
+    return res.json();
+  } catch (error) {
+    console.error(`Error fetching article ${slug}:`, error);
+    return null;
+  }
 }
 
 // Generate Dynamic SEO Metadata for Next.js App Router
@@ -29,6 +42,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const article = await getArticle(params.slug);
+    if (!article) {
+      return {
+        title: "Article Not Found - Sonalinews Clone",
+      };
+    }
+    
     const imageUrl = article.imageUrl || "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80";
     
     return {
@@ -57,8 +76,7 @@ export async function generateMetadata({
     };
   } catch (error) {
     return {
-      title: "Article Not Found - Sonalinews Clone",
-      description: "This article could not be found.",
+      title: "Article - Sonalinews Clone",
     };
   }
 }
@@ -68,16 +86,20 @@ export default async function ArticleDetail({
 }: {
   params: { slug: string };
 }) {
-  let article: Article;
+  let article: Article | null = null;
   try {
     article = await getArticle(params.slug);
   } catch (error) {
+    console.error("Prerender error catch:", error);
+  }
+
+  if (!article) {
     return (
       <div className="min-h-screen flex flex-col bg-zinc-950 text-white">
         <Header />
         <main className="flex-grow flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4 text-red-500">404 - Article Not Found</h1>
+          <div className="text-center p-8">
+            <h1 className="text-3xl font-extrabold mb-4 text-red-500">404 - Article Not Found</h1>
             <p className="text-zinc-400">The news story you are looking for does not exist or has been deleted.</p>
           </div>
         </main>
@@ -94,7 +116,7 @@ export default async function ArticleDetail({
       <main className="container mx-auto py-12 px-4 max-w-4xl flex-grow">
         <article className="space-y-8">
           <div className="space-y-4">
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+            <h1 className="font-display text-3xl sm:text-5xl font-extrabold text-white leading-tight">
               {article.title}
             </h1>
             <p className="text-lg text-zinc-400 font-medium italic border-l-4 border-amber-400 pl-4 py-1">
@@ -110,7 +132,6 @@ export default async function ArticleDetail({
             />
           </div>
 
-          {/* Styled article body */}
           <div className="prose prose-invert max-w-none pt-4 text-zinc-300 space-y-6 leading-relaxed text-lg">
             <ReactMarkdown>{article.content}</ReactMarkdown>
           </div>
