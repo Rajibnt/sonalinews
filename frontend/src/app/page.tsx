@@ -486,6 +486,125 @@ const CAT_CAPITAL_LIST: Article[] = [
   }
 ];
 
+// --- 13. SIXTH SECTION (শিক্ষা | স্বাস্থ্য | বিজ্ঞান ও প্রযুক্তি) DATA matching the screenshot
+const CAT_EDUCATION_FEATURED: Article = {
+  id: 60,
+  slug: "school-college-madrasa-opening-schedule",
+  title: "স্কুল-কলেজ ও মাদ্রাসা, কোনটি কবে খুলবে?",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_EDUCATION_LIST: Article[] = [
+  {
+    id: 61,
+    slug: "buet-students-own-bus-eid-journey",
+    title: "প্রথমবারের মতো বিভাগীয় শহরে বুয়েট শিক্ষার্থীদের নিজস্ব বাসে ঈদযাত্রা",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 62,
+    slug: "holiday-list-correction-ministry-notice",
+    title: "ছুটির তালিকা সংশোধন করে প্রজ্ঞাপন জারি",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 63,
+    slug: "primary-school-saturday-eid-holiday",
+    title: "প্রাথমিক বিদ্যালয়ে শনিবার থেকেই ঈদের ছুটি শুরু",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 64,
+    slug: "primary-school-saturday-opening-new-decision",
+    title: "শনিবার প্রাথমিক বিদ্যালয় খোলা রাখার নতুন সিদ্ধান্ত",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_HEALTH_FEATURED: Article = {
+  id: 65,
+  slug: "dengue-one-more-death-110-admitted",
+  title: "ডেঙ্গুতে আরও একজনের মৃত্যু, হাসপাতালে ভর্তি ১১০ জন",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1560930961-b179119f41b5?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_HEALTH_LIST: Article[] = [
+  {
+    id: 66,
+    slug: "measles-symptom-three-more-children-death",
+    title: "হাম উপসর্গে আরও তিন শিশুর মৃত্যু",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1584515979956-d9b6e5d09982?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 67,
+    slug: "cancer-treatment-new-milestone-injection-tumor",
+    title: "ক্যান্সার চিকিৎসায় নতুন মাইলফলক ইনজেকশন, নির্মূল হবে টিউমার",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 68,
+    slug: "measles-symptom-two-more-children-passed",
+    title: "হামের উপসর্গে না ফেরার দেশে আরও দুই শিশু",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 69,
+    slug: "measles-suspected-eight-children-death",
+    title: "হাম সন্দেহে প্রাণ গেল আরও ৮ শিশুর",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_SCI_TECH_FEATURED: Article = {
+  id: 70,
+  slug: "mobile-subscribers-good-news",
+  title: "মোবাইল গ্রাহকদের জন্য সুখবর",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80"
+};
+
+const CAT_SCI_TECH_LIST: Article[] = [
+  {
+    id: 71,
+    slug: "facebook-good-news-content-creators",
+    title: "কনটেন্ট ক্রিয়েটরদের সুসংবাদ দিল ফেসবুক",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 72,
+    slug: "btrc-internet-price-reduction-good-news",
+    title: "ইন্টারনেটের দাম নিয়ে সুখবর দিল বিটিআরসি",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 73,
+    slug: "mobile-subscribers-long-suffering-ends",
+    title: "মোবাইল গ্রাহকদের জন্য সুখবর, দীর্ঘদিনের ভোগান্তির অবসান হতে যাচ্ছে",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 74,
+    slug: "successful-moon-mission-astronauts-return",
+    title: "সফল চন্দ্রাভিযান শেষে পৃথিবীতে ফিরলেন চার নভোচারী",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f9fa] text-zinc-800 font-sans leading-normal">
@@ -1252,6 +1371,125 @@ export default function Home() {
                     href={`/articles/${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_CAPITAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* --- 14. SIXTH GRID SECTION (শিক্ষা | স্বাস্থ্য | বিজ্ঞান ও প্রযুক্তি) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6 border-t border-zinc-200">
+          
+          {/* Column 1: শিক্ষা (Education) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                শিক্ষা
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured overlay card */}
+              <Link href={`/articles/${CAT_EDUCATION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+                <img src={CAT_EDUCATION_FEATURED.imageUrl} alt={CAT_EDUCATION_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_EDUCATION_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List stacked */}
+              <div className="space-y-3 pt-2">
+                {CAT_EDUCATION_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_EDUCATION_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2: স্বাস্থ্য (Health) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                স্বাস্থ্য
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured overlay card */}
+              <Link href={`/articles/${CAT_HEALTH_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+                <img src={CAT_HEALTH_FEATURED.imageUrl} alt={CAT_HEALTH_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_HEALTH_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List stacked */}
+              <div className="space-y-3 pt-2">
+                {CAT_HEALTH_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_HEALTH_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3: বিজ্ঞান ও প্রযুক্তি (Science & Tech) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                বিজ্ঞান ও প্রযুক্তি
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              {/* Featured overlay card */}
+              <Link href={`/articles/${CAT_SCI_TECH_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+                <img src={CAT_SCI_TECH_FEATURED.imageUrl} alt={CAT_SCI_TECH_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {CAT_SCI_TECH_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+              {/* List stacked */}
+              <div className="space-y-3 pt-2">
+                {CAT_SCI_TECH_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2 ${
+                      index !== CAT_SCI_TECH_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
                   >
                     <img src={item.imageUrl} alt={item.title} className="w-14 h-11 object-cover rounded border border-zinc-200 shrink-0" />
