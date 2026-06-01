@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: sonalinews-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sonalinews-db
+          property: connectionString
+      - key: ADMIN_TOKEN
+        value: sonali-admin-secret-2026
+      - key: PORT
+        value: 10000
+
+databases:
+  - name: sonalinews-db
+    plan: free
