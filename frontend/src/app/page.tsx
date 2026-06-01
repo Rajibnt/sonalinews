@@ -91,7 +91,7 @@ const ROW_2_NEWS: Article[] = [
     id: 10,
     slug: "nbr-dollar-alert",
     title: "এনবিআরকে ডলার সতর্কতা",
-    excerpt: "ডলার সংকট মোকাবেলালায় জাতীয় রাজস্ব বোর্ডকে (এনবিআর) বিলাসবহুল আমদানিতে কঠোর নজরদারির নির্দেশ।",
+    excerpt: "ডলার সংকট মোকাবেলায় জাতীয় রাজস্ব বোর্ডকে (এনবিআর) বিলাসবহুল আমদানিতে কঠোর নজরদারির নির্দেশ।",
     imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=350&q=80"
   },
   {
@@ -302,6 +302,70 @@ const CAT_INTERVIEW_LIST = [
   }
 ];
 
+// --- 9. SPORTS SECTION (খেলাধুলা) DATA matching the screenshot
+const SPORTS_TOP_1: Article = {
+  id: 37,
+  slug: "youtube-worldcup-free-broadcast",
+  title: "ইউটিউবে বিনামূল্যে দেখা যাবে বিশ্বকাপ ফুটবল",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=500&q=80"
+};
+
+const SPORTS_TOP_2: Article = {
+  id: 38,
+  slug: "ipl-final-bengaluru-kohli",
+  title: "আইপিএল ফাইনালে বেঙ্গালুরু ও কোহলির যত কীর্তি",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=500&q=80"
+};
+
+const SPORTS_BOTTOM_LIST: Article[] = [
+  {
+    id: 39,
+    slug: "brazil-beat-panama-no-neymar",
+    title: "নেইমারকে ছাড়াই পানামাকে উড়িয়ে দিল ব্রাজিল",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    id: 40,
+    slug: "psg-violence-celebrations",
+    title: "পিএসজির বিজয়-উন্মাদনা রূপ নিল সহিংসতায়, গ্রেপ্তার ৪ শতাধিক",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1540747737956-37872f767104?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    id: 41,
+    slug: "psg-champion-arsenal-shootout",
+    title: "টাইব্রেকারে আর্সেনালের স্বপ্ন ভেঙে চ্যাম্পিয়ন পিএসজি",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    id: 42,
+    slug: "egypt-worldcup-team-salah",
+    title: "সালাহ্‌র নেতৃত্বে মিশরের বিশ্বকাপ দল ঘোষণা",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80"
+  }
+];
+
+// --- 10. OPINION SECTION (মুক্তমত) DATA matching the screenshot
+const OPINION_FEATURED: Article = {
+  id: 43,
+  slug: "child-imprisonment-responsibility",
+  title: "দুধের শিশুর কারাদণ্ড, দায় কার?",
+  excerpt: "",
+  imageUrl: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80"
+};
+
+const OPINION_LIST_ITEM = {
+  id: 44,
+  slug: "islamic-sukuk-guidelines",
+  title: "শরিয়াহভিত্তিক সরকারি সুকুক: নতুন বিনিয়োগকারীর জন্য গাইডলাইন",
+  excerpt: ""
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f9fa] text-zinc-800 font-sans leading-normal">
@@ -322,7 +386,7 @@ export default function Home() {
               SIB
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह্‌जालाल इस्लामी ব্যাংক পিএলসি</span>
+              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह्जालाल इस्लामी बैंक पीएलसी</span>
               <span className="text-[10px] sm:text-xs text-blue-100 font-medium mt-0.5">Shahjalal Islami Bank PLC – শরীয়াহ্‌ ভিত্তিক আধুনিক ব্যাংকিং</span>
             </div>
           </div>
@@ -683,7 +747,6 @@ export default function Home() {
                       index !== CAT_ECONOMY_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
                   >
-                    {/* Soft grey background for Islami Bank and NBR thumbnails */}
                     <div className="w-16 h-12 bg-zinc-50 border border-zinc-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
                       <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
                     </div>
@@ -706,13 +769,10 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-2 gap-3">
-              {/* Widget 1: DSE Live Ticker Table (100% precise cloning) */}
               <div className="bg-[#fcfcfc] border border-zinc-200 rounded-xl shadow-sm flex flex-col justify-between overflow-hidden select-none text-[9px] font-bold">
-                {/* Dark Blue Header */}
                 <div className="bg-[#1b5e9e] text-white text-center py-1.5 font-bold text-[8px] tracking-wide border-b border-blue-900">
                   Last update on Jun 01, 2026 at 2:30 PM
                 </div>
-                {/* Indexes table body */}
                 <div className="px-2 py-1 space-y-1 text-[8px]">
                   <div className="flex justify-between border-b border-zinc-100 pb-0.5 items-center">
                     <span className="text-zinc-600">DSEX Index</span>
@@ -730,19 +790,16 @@ export default function Home() {
                     <span className="text-emerald-600 font-extrabold flex items-center">13.70808 🟩</span>
                   </div>
                 </div>
-                {/* Total Statistics row */}
                 <div className="bg-sky-50/50 border-y border-zinc-100 py-1 text-[7px] text-zinc-500 flex justify-between px-2 font-semibold">
                   <span>Trade: 227730</span>
                   <span>Volume: 328m</span>
                   <span>Value: 9123m</span>
                 </div>
-                {/* Issues state */}
                 <div className="bg-zinc-50 py-1 text-[7px] text-zinc-400 flex justify-between px-2 font-semibold border-b border-zinc-100">
                   <span className="text-emerald-600">Adv: 179</span>
                   <span className="text-rose-600">Dec: 162</span>
                   <span>Unch: 55</span>
                 </div>
-                {/* Bottom title & text */}
                 <div className="p-2 space-y-1">
                   <div className="text-[#cc0000] text-[8px] font-black uppercase tracking-wider block">
                     ঈদ পরবর্তী প্রথম কার্যদিবস
@@ -753,10 +810,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Widget 2: Maksons Spinning Mills (with inner divider border) */}
               <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group">
                 <div className="bg-[#fafafa] border-b border-zinc-100 py-4 flex flex-col justify-center items-center h-20 shrink-0 select-none">
-                  {/* Red round letter M logo representation */}
                   <div className="w-8 h-8 rounded-full border border-red-500 flex items-center justify-center font-black text-[#cc0000] text-sm bg-white shadow-sm">M</div>
                   <span className="text-[7px] font-extrabold text-zinc-400 mt-1 uppercase tracking-wider">Maksons Spinning</span>
                 </div>
@@ -767,10 +822,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Widget 3: British American Tobacco (with inner divider border) */}
               <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group">
                 <div className="bg-[#fafafa] border-b border-zinc-100 py-4 flex flex-col justify-center items-center h-20 shrink-0 select-none">
-                  {/* Gold leaves representation */}
                   <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center font-black text-amber-500 text-sm border border-amber-200 shadow-sm">🍁</div>
                   <span className="text-[7px] font-extrabold text-zinc-400 mt-1 uppercase tracking-wider">BAT Bangladesh</span>
                 </div>
@@ -781,7 +834,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Widget 4: Holiday Desk office (with inner divider border) */}
               <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group">
                 <div className="bg-zinc-200 border-b border-zinc-100 h-20 shrink-0 overflow-hidden relative select-none">
                   <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=150&q=80" alt="Office" className="w-full h-full object-cover" />
@@ -805,7 +857,6 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               
-              {/* Interview stacked list */}
               <div className="space-y-3.5">
                 {CAT_INTERVIEW_LIST.map((item, idx) => (
                   <Link 
@@ -828,17 +879,13 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Blue ad block with megaphone icon on the corner */}
               <div className="bg-gradient-to-b from-[#0b3c5d] to-[#0a2f4a] border border-[#092438] text-white rounded-xl p-5 text-center select-none shadow-md aspect-[300/215] flex flex-col justify-center items-center gap-1.5 relative overflow-hidden my-1">
                 <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
-                
-                {/* megphone white icon representation */}
                 <div className="absolute bottom-2 left-2 text-white/10 w-16 h-16 flex items-center justify-center rotate-[15deg]">
                   <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                   </svg>
                 </div>
-
                 <div className="text-[8px] uppercase tracking-wider text-sky-300/80 font-extrabold">Space for Advertisement</div>
                 <h4 className="font-extrabold text-sm sm:text-base text-white tracking-wide uppercase">Ad size 300X220px</h4>
                 <div className="text-[10px] text-sky-200/60 font-semibold mt-1">০১৭০০৯২২৫৫৭</div>
@@ -847,6 +894,146 @@ export default function Home() {
             </div>
           </div>
 
+        </div>
+
+        {/* --- 10. FOURTH SECTION: SPORTS & OPINION (খেলা | মুক্তমত) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6 border-t border-zinc-200">
+          
+          {/* Column A (Left): খেলা (Sports - Grid of 6 items) spanning 9/12 */}
+          <div className="lg:col-span-9 space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                খেলা
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {/* Top Row: 2 large featured cards side by side */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Link href={`/articles/${SPORTS_TOP_1.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
+                  <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
+                    <img src={SPORTS_TOP_1.imageUrl} alt={SPORTS_TOP_1.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                  </div>
+                  <div className="p-3">
+                    <h4 className="text-xs sm:text-sm font-bold text-zinc-950 group-hover:text-[#cc0000] leading-snug transition-colors line-clamp-2">
+                      {SPORTS_TOP_1.title}
+                    </h4>
+                  </div>
+                </Link>
+
+                <Link href={`/articles/${SPORTS_TOP_2.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
+                  <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
+                    <img src={SPORTS_TOP_2.imageUrl} alt={SPORTS_TOP_2.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                  </div>
+                  <div className="p-3">
+                    <h4 className="text-xs sm:text-sm font-bold text-zinc-950 group-hover:text-[#cc0000] leading-snug transition-colors line-clamp-2">
+                      {SPORTS_TOP_2.title}
+                    </h4>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Bottom Row: 4 small cards side by side */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {SPORTS_BOTTOM_LIST.map((item) => (
+                  <Link key={item.id} href={`/articles/${item.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
+                    <div className="aspect-[4/3] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
+                      <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                    </div>
+                    <div className="p-2 flex-grow flex items-center justify-center">
+                      <h5 className="text-[11px] sm:text-xs font-bold text-zinc-900 group-hover:text-[#cc0000] leading-snug text-center transition-colors line-clamp-3">
+                        {item.title}
+                      </h5>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column B (Right): মুক্তমত (Opinion) & Megaphone/Device Ad Widget spanning 3/12 */}
+          <div className="lg:col-span-3 space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                মুক্তমত
+              </div>
+            </div>
+
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              
+              {/* Featured Opinion card with inside-image overlay headline */}
+              <Link href={`/articles/${OPINION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+                <img src={OPINION_FEATURED.imageUrl} alt={OPINION_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
+                    {OPINION_FEATURED.title}
+                  </h4>
+                </div>
+              </Link>
+
+              {/* Stacked list underneath */}
+              <div className="border-t border-zinc-100 pt-3">
+                <Link href={`/articles/${OPINION_LIST_ITEM.slug}`} className="group block text-xs sm:text-sm font-bold text-zinc-800 hover:text-[#cc0000] leading-snug transition">
+                  ▪ {OPINION_LIST_ITEM.title}
+                </Link>
+              </div>
+
+              {/* Highly Customized Blue Ad Placeholder Box (with Megaphone and Laptop Graphic) */}
+              <div className="bg-gradient-to-b from-[#06182c] to-[#0a2644] border border-[#041121] text-white rounded-xl p-5 text-center select-none shadow-md aspect-[300/215] flex flex-col justify-center items-center gap-1.5 relative overflow-hidden my-1">
+                <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
+                
+                {/* 1. megphone white icon representation on bottom left */}
+                <div className="absolute bottom-2 left-2 text-sky-400/25 w-14 h-14 flex items-center justify-center rotate-[15deg]">
+                  <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                  </svg>
+                </div>
+
+                {/* 2. Custom CSS device laptop/tablet representation on bottom right */}
+                <div className="absolute bottom-1 right-2 w-14 h-10 border border-zinc-700/50 rounded bg-zinc-800/40 p-0.5 hidden sm:flex flex-col justify-between items-center shadow-inner">
+                  <div className="w-12 h-6 border border-zinc-600/30 rounded bg-sky-400/10 flex items-center justify-center text-[5px] font-black text-sky-400 tracking-tighter">
+                    YOUR AD
+                  </div>
+                  <div className="w-14 h-1 bg-zinc-600 rounded-b"></div>
+                </div>
+
+                <div className="text-[8px] uppercase tracking-wider text-sky-300 font-extrabold">Space for Advertisement</div>
+                <h4 className="font-extrabold text-sm sm:text-base text-white tracking-wide uppercase">Ad size 300X220px</h4>
+                <div className="text-[10px] text-sky-200/60 font-semibold mt-1">০১৭০০৯২২৫৫৭</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        {/* --- 11. BOTTOM DUAL AD BANNER (UNDER SPORTS & OPINION) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
+          {/* Galaxy Flying Academy Ad */}
+          <div className="bg-[#b3b3df]/40 border border-zinc-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none h-16">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-[#1b5e9e] flex items-center justify-center font-black text-white text-xs select-none">GFA</div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-xs sm:text-sm text-[#1b5e9e] leading-tight">Galaxy Flying Academy</span>
+                <span className="text-[9px] text-[#cc0000] font-black mt-0.5 uppercase tracking-widest">REAL PILOT SCHOOL</span>
+              </div>
+            </div>
+            <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-bold bg-white px-1.5 py-0.5 rounded border border-zinc-100">AD</span>
+          </div>
+
+          {/* Fly Galaxy Travels & Tours Ad */}
+          <div className="bg-[#c2e2e8]/40 border border-cyan-200 rounded-xl p-4 flex items-center justify-between shadow-sm select-none text-cyan-950 h-16">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-[#006a4e] flex items-center justify-center font-bold text-white text-xs select-none">FG</div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-xs sm:text-sm leading-tight text-zinc-900">Fly Galaxy Travels & Tours</span>
+                <span className="text-[9px] text-[#1b5e9e] font-bold mt-0.5">Domestic & International Air Ticket</span>
+              </div>
+            </div>
+            <span className="text-[8px] uppercase tracking-wider text-cyan-700 font-bold bg-white px-1.5 py-0.5 rounded border border-cyan-100">AD</span>
+          </div>
         </div>
 
       </main>
