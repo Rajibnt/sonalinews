@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 // Helper function to get the current date in Bengali format
@@ -28,24 +31,44 @@ function getBengaliDate() {
   return `ঢাকা | ${dayName}, ${dateNum} ${monthName}, ${yearNum}`;
 }
 
+const DEFAULT_CATEGORIES = [
+  { name: "জাতীয়", url: "/?category=জাতীয়" },
+  { name: "রাজনীতি", url: "/?category=রাজনীতি" },
+  { name: "অর্থনীতি", url: "/?category=অর্থনীতি" },
+  { name: "সারাদেশ", url: "/?category=সারাদেশ" },
+  { name: "আন্তর্জাতিক", url: "/?category=আন্তর্জাতিক" },
+  { name: "খেলা", url: "/?category=খেলা" },
+  { name: "বিনোদন", url: "/?category=বিনোদন" },
+  { name: "সোনালী বিশেষ", url: "/?category=সোনালী বিশেষ" },
+  { name: "শিক্ষা", url: "/?category=শিক্ষা" },
+  { name: "স্বাস্থ্য", url: "/?category=স্বাস্থ্য" },
+  { name: "চাকরির খবর", url: "/?category=চাকরির খবর" },
+  { name: "ভিডিও গ্যালারি", url: "/?category=ভিডিও গ্যালারি" },
+  { name: "বিবিধ", url: "/?category=বিবিধ" }
+];
+
 export default function Header() {
   const dateStr = getBengaliDate();
+  const [menus, setMenus] = useState<any[]>(DEFAULT_CATEGORIES);
 
-  const categories = [
-    "জাতীয়",
-    "রাজনীতি",
-    "অর্থনীতি",
-    "সারাদেশ",
-    "আন্তর্জাতিক",
-    "খেলা",
-    "বিনোদন",
-    "সোনালী বিশেষ",
-    "শিক্ষা",
-    "স্বাস্থ্য",
-    "চাকরির খবর",
-    "ভিডিও গ্যালারি",
-    "বিবিধ"
-  ];
+  useEffect(() => {
+    const fetchMenus = async () => {
+      try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const res = await fetch(`${apiUrl}/api/menus`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.length > 0) {
+            setMenus(data);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch dynamic menus:", error);
+      }
+    };
+    fetchMenus();
+  }, []);
+
 
   return (
     <header className="bg-white border-b border-zinc-200 w-full select-none">
@@ -115,13 +138,13 @@ export default function Header() {
 
           {/* Scrolling category list for mobile, horizontal flex for desktop */}
           <nav className="flex items-center overflow-x-auto no-scrollbar scroll-smooth flex-grow py-0 px-2 font-medium">
-            {categories.map((cat, index) => (
+            {menus.map((cat, index) => (
               <Link
                 key={index}
-                href={`/?category=${encodeURIComponent(cat)}`}
+                href={cat.url}
                 className="text-white hover:bg-white/10 px-3.5 py-3 text-sm shrink-0 font-bold border-r border-white/10 hover:text-amber-300 transition"
               >
-                {cat}
+                {cat.name}
               </Link>
             ))}
           </nav>
