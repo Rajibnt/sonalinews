@@ -253,6 +253,55 @@ const CAT_INT_LIST: Article[] = [
   }
 ];
 
+// --- 8. THIRD SECTION ECONOMY & DIALOGUE DATA ---
+const CAT_ECONOMY_LIST: Article[] = [
+  {
+    id: 31,
+    slug: "islami-bank-movement-halted",
+    title: "আমানতকারীদের আন্দোলনের মুখে পর্ষদ সভা করতে পারেনি ইসলামী ব্যাংক",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 32,
+    slug: "market-shutdown-rules-power",
+    title: "বিদ্যুৎ সাশ্রয়ে মার্কেট-শপিং মল বন্ধের নতুন নির্দেশনা",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 33,
+    slug: "nbr-critical-dollar-alert",
+    title: "এনবিআরের জরুরি সতর্কতা",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    id: 34,
+    slug: "motijheel-police-crowd-bank",
+    title: "থমথমে মতিঝিল ইসলামী ব্যাংকের প্রধান কার্যালয় এলাকা",
+    excerpt: "",
+    imageUrl: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const CAT_INTERVIEW_LIST = [
+  {
+    id: 35,
+    slug: "bankassurance-insurance-comp",
+    title: "ব্যাংকাসুরেন্স বীমা খাতে প্রতিযোগিতা বাড়িয়ে গ্রাহকসেবার মান উন্নত করবে",
+    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=150&q=80",
+    label: ""
+  },
+  {
+    id: 36,
+    slug: "mirza-fakhrul-neutral-government",
+    title: "সরকার নিরপেক্ষ থাকতে না পারলে নিরপেক্ষ সরকারের",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+    label: "মির্জা ফখরুল"
+  }
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f9fa] text-zinc-800 font-sans leading-normal">
@@ -273,7 +322,7 @@ export default function Home() {
               SIB
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">শাহ্‌জালাল ইসলামী ব্যাংক পিএলসি</span>
+              <span className="font-extrabold text-lg sm:text-3xl tracking-tight">शाह্‌जालाल इस्लामी बैंक पीएलसी</span>
               <span className="text-[10px] sm:text-xs text-blue-100 font-medium mt-0.5">Shahjalal Islami Bank PLC – শরীয়াহ্‌ ভিত্তিক আধুনিক ব্যাংকিং</span>
             </div>
           </div>
@@ -467,7 +516,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-[#0b5c3a] text-xs select-none">SE</div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-xs sm:text-sm leading-tight">Shahjalal Equity Management Limited</span>
+                <span className="font-extrabold text-xs sm:text-sm leading-tight text-white">Shahjalal Equity Management Limited</span>
                 <span className="text-[9px] text-emerald-200 font-medium mt-0.5">Full Hedged Merchant Bank</span>
               </div>
             </div>
@@ -487,7 +536,6 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              {/* Featured news with text overlay inside the image */}
               <Link href={`/articles/${CAT_NATIONAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={CAT_NATIONAL_FEATURED.imageUrl} alt={CAT_NATIONAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
@@ -496,7 +544,6 @@ export default function Home() {
                   </h4>
                 </div>
               </Link>
-              {/* List news */}
               <div className="space-y-3 pt-2">
                 {CAT_NATIONAL_LIST.map((item, index) => (
                   <Link 
@@ -525,7 +572,6 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              {/* Featured news with text overlay inside the image */}
               <Link href={`/articles/${CAT_POLITICS_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={CAT_POLITICS_FEATURED.imageUrl} alt={CAT_POLITICS_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
@@ -534,7 +580,6 @@ export default function Home() {
                   </h4>
                 </div>
               </Link>
-              {/* List news */}
               <div className="space-y-3 pt-2">
                 {CAT_POLITICS_LIST.map((item, index) => (
                   <Link 
@@ -563,7 +608,6 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              {/* Featured news with text overlay inside the image */}
               <Link href={`/articles/${CAT_INT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={CAT_INT_FEATURED.imageUrl} alt={CAT_INT_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
@@ -572,7 +616,6 @@ export default function Home() {
                   </h4>
                 </div>
               </Link>
-              {/* List news */}
               <div className="space-y-3 pt-2">
                 {CAT_INT_LIST.map((item, index) => (
                   <Link 
@@ -619,6 +662,144 @@ export default function Home() {
             </div>
             <span className="text-[8px] uppercase tracking-wider text-emerald-100 font-bold bg-black/20 px-1.5 py-0.5 rounded border border-emerald-700/50">AD</span>
           </div>
+        </div>
+
+        {/* --- 9. THIRD GRID SECTION (অর্থনীতি | শেয়ার বাজার | সাক্ষাৎকার) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6 border-t border-zinc-200">
+          
+          {/* Column 1: অর্থনীতি (Economy) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                অর্থনীতি
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              <div className="space-y-3.5">
+                {CAT_ECONOMY_LIST.map((item, index) => (
+                  <Link 
+                    key={item.id} 
+                    href={`/articles/${item.slug}`} 
+                    className={`flex gap-3 group items-center py-2.5 ${
+                      index !== CAT_ECONOMY_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-16 h-12 object-cover rounded border border-zinc-200 shrink-0" />
+                    <h5 className="text-xs sm:text-sm font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-3">
+                      {item.title}
+                    </h5>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2: শেয়ার বাজার (Share Market 2x2 Grid) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                শেয়ার বাজার
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-3">
+              {/* Widget 1: DSE Live Ticker Table */}
+              <div className="bg-gradient-to-b from-sky-50 to-blue-100 border border-blue-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden select-none">
+                <div className="text-[8px] text-zinc-500 font-bold border-b border-blue-200 pb-1">
+                  Last update on: Jun 01, 2026
+                </div>
+                <div className="text-[9px] font-bold text-left space-y-1 my-1">
+                  <div className="flex justify-between border-b border-blue-100 pb-0.5">
+                    <span>DSEX Index</span>
+                    <span className="text-emerald-700">6,244.18 (+0.56%)</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>DS30 Index</span>
+                    <span className="text-emerald-700">2,149.20 (+0.32%)</span>
+                  </div>
+                </div>
+                <div className="bg-red-500 text-white text-[8px] font-black py-0.5 rounded uppercase tracking-wider block">
+                  ঈদ পরবর্তী প্রথম দিন
+                </div>
+                <h5 className="text-[9px] font-black text-zinc-950 mt-1 hover:text-[#cc0000] leading-tight">
+                  শেয়ারবাজারে বেড়েছে সূচক ও লেনদেন
+                </h5>
+              </div>
+
+              {/* Widget 2: Maksons Spinning Mills */}
+              <div className="bg-white border border-zinc-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden group select-none">
+                <div className="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center font-black text-[#cc0000] text-xs mx-auto">M</div>
+                <span className="text-[8px] text-zinc-400 font-semibold block">Maksons Spinning Mills</span>
+                <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
+                  অর্থনৈতিক অঞ্চলের ১০ একর শিল্প প্লট ছাড়ছে ম্যাকসন্স স্পিনিং
+                </h5>
+              </div>
+
+              {/* Widget 3: British American Tobacco */}
+              <div className="bg-white border border-zinc-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden group select-none">
+                <div className="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center font-bold text-amber-500 text-xs mx-auto">🍁</div>
+                <span className="text-[8px] text-zinc-400 font-semibold block">BAT Bangladesh</span>
+                <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
+                  ৩০ বিলিয়ন ডলারের জালিয়াতি ও পাচারের অভিযোগে বিএটিবির বিরুদ্ধে অনুসন্ধান
+                </h5>
+              </div>
+
+              {/* Widget 4: Holiday Desk office */}
+              <div className="bg-white border border-zinc-200 rounded-xl p-2.5 shadow-sm text-center flex flex-col justify-between aspect-[1/1] overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=150&q=80" alt="Office" className="w-full h-10 object-cover rounded border border-zinc-100" />
+                <h5 className="text-[9px] font-black text-zinc-950 hover:text-[#cc0000] leading-tight group-hover:underline transition line-clamp-3">
+                  সোমবার থেকে ব্যাংক ও শেয়ারবাজারে ঈদের ছুটি শুরু
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3: সাক্ষাৎকার (Interview List & Landscape Ad) */}
+          <div className="space-y-4">
+            <div className="border-b-[3px] border-[#0b5c3a] pb-0 relative">
+              <div className="bg-[#0b5c3a] text-white font-extrabold px-6 py-2 text-sm select-none relative inline-block rounded-t"
+                   style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)" }}>
+                সাক্ষাৎকার
+              </div>
+            </div>
+            <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
+              
+              {/* Interview stacked list */}
+              <div className="space-y-3">
+                {CAT_INTERVIEW_LIST.map((item, idx) => (
+                  <Link 
+                    key={item.id}
+                    href={`/articles/${item.slug}`}
+                    className={`flex gap-3 group items-center py-2 ${
+                      idx !== CAT_INTERVIEW_LIST.length - 1 ? "border-b border-zinc-100" : ""
+                    }`}
+                  >
+                    <img src={item.imageUrl} alt={item.title} className="w-12 h-12 rounded-full object-cover border border-zinc-200 shrink-0 shadow-sm" />
+                    <div className="space-y-0.5">
+                      {item.label && (
+                        <span className="text-[9px] font-black text-rose-600 block">{item.label}</span>
+                      )}
+                      <h5 className="text-xs font-bold text-zinc-800 group-hover:text-[#cc0000] leading-snug transition line-clamp-2">
+                        {item.title}
+                      </h5>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Clean Blue Block Ad Placeholder (Ad size 300x220px) matching screenshot */}
+              <div className="bg-gradient-to-b from-sky-950 to-slate-900 border border-slate-800 text-white rounded-xl p-6 text-center select-none shadow-sm aspect-[300/220] flex flex-col justify-center items-center gap-1.5 relative overflow-hidden my-1">
+                <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
+                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-extrabold">Space for Advertisement</div>
+                <h4 className="font-extrabold text-sm sm:text-base text-sky-400 tracking-wide uppercase">Ad size 300X220px</h4>
+                <div className="text-[9px] text-zinc-500 font-semibold mt-1">হটলাইন: ০১৭০০৯২২৫৫৭</div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </main>
