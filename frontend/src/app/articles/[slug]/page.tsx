@@ -1,7 +1,10 @@
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
+import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 
 type Article = {
   id: number;
@@ -12,85 +15,59 @@ type Article = {
   imageUrl?: string;
 };
 
-async function getArticle(slug: string): Promise<Article | null> {
-  try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-    
-    // Safety check to prevent build crashes if URL is invalid/undefined
-    if (!apiUrl || (!apiUrl.startsWith("http://") && !apiUrl.startsWith("https://"))) {
-      console.warn(`API URL is not set or invalid during build. Returning null for article: ${slug}`);
-      return null;
-    }
-    
-    const res = await fetch(`${apiUrl}/api/articles/${slug}`, {
-      next: { revalidate: 10 }
-    });
-    
-    if (!res.ok) return null;
-    return res.json();
-  } catch (error) {
-    console.error(`Error fetching article ${slug}:`, error);
-    return null;
-  }
-}
+export default function ArticleDetail() {
+  const params = useParams();
+  const slug = params?.slug as string;
+  
+  const [article, setArticle] = useState<Article | null>(null);
+  const [loading, setLoading] = useState(true);
 
-// Generate Dynamic SEO Metadata for Next.js App Router
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  try {
-    const article = await getArticle(params.slug);
-    if (!article) {
-      return {
-        title: "Article Not Found - Sonalinews Clone",
-      };
-    }
+  useEffect(() => {
+    if (!slug) return;
     
-    const imageUrl = article.imageUrl || "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80";
+    const fetchArticle = async () => {
+      try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const res = await fetch(`${apiUrl}/api/articles/${slug}`);
+        if (res.ok) {
+          const data = await res.json();
+          setArticle(data);
+          setLoading(false);
+          return;
+        }
+      } catch (error) {
+        console.error("Fetch failed, attempting local storage fallback:", error);
+      }
+      
+      // Local Storage Fallback
+      try {
+        const localArticlesStr = localStorage.getItem("sonali_local_articles");
+        if (localArticlesStr) {
+          const localArticles = JSON.parse(localArticlesStr);
+          const found = localArticles.find((art: any) => art.slug === slug);
+          if (found) {
+            setArticle(found);
+          }
+        }
+      } catch (err) {
+        console.error("Local storage error:", err);
+      }
+      setLoading(false);
+    };
     
-    return {
-      title: `${article.title} - Sonalinews Clone`,
-      description: article.excerpt,
-      openGraph: {
-        title: article.title,
-        description: article.excerpt,
-        url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/articles/${article.slug}`,
-        type: "article",
-        images: [
-          {
-            url: imageUrl,
-            width: 1200,
-            height: 630,
-            alt: article.title,
-          },
-        ],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: article.title,
-        description: article.excerpt,
-        images: [imageUrl],
-      },
-    };
-  } catch (error) {
-    return {
-      title: "Article - Sonalinews Clone",
-    };
-  }
-}
+    fetchArticle();
+  }, [slug]);
 
-export default async function ArticleDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  let article: Article | null = null;
-  try {
-    article = await getArticle(params.slug);
-  } catch (error) {
-    console.error("Prerender error catch:", error);
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col bg-zinc-950 text-white">
+        <Header />
+        <main className="flex-grow flex items-center justify-center">
+          <div className="text-zinc-400 font-bold">লোড হচ্ছে...</div>
+        </main>
+        <Footer />
+      </div>
+    );
   }
 
   if (!article) {
