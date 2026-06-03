@@ -54,7 +54,16 @@ export default function Header() {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const getApiUrl = () => {
+          if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+          if (typeof window !== "undefined") {
+            if (window.location.hostname === "localhost" && window.location.port === "3000") {
+              return "http://localhost:5000";
+            }
+          }
+          return "";
+        };
+        const apiUrl = getApiUrl();
         const res = await fetch(`${apiUrl}/api/menus`);
         if (res.ok) {
           const data = await res.json();

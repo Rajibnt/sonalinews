@@ -643,7 +643,7 @@ export default function Home() {
               {HERO_LEFT_NEWS.map((article, index) => (
                 <Link 
                   key={article.id} 
-                  href={`/articles/${article.slug}`} 
+                  href={`/articles?slug=${article.slug}`} 
                   className={`flex gap-3 group p-2.5 rounded hover:bg-zinc-50 transition items-center ${
                     index !== HERO_LEFT_NEWS.length - 1 ? "border-b border-zinc-100" : ""
                   }`}
@@ -666,7 +666,7 @@ export default function Home() {
           {/* COLUMN CENTER: Main Featured Large Headline (width 6/12) */}
           <div className="lg:col-span-6">
             <Link 
-              href={`/articles/${HERO_CENTER_NEWS.slug}`} 
+              href={`/articles?slug=${HERO_CENTER_NEWS.slug}`} 
               className="bg-white border border-zinc-200 rounded overflow-hidden shadow-sm hover:shadow-md transition duration-200 block group h-full flex flex-col"
             >
               <div className="relative aspect-video w-full overflow-hidden bg-zinc-200 border-b border-zinc-200">
@@ -753,7 +753,7 @@ export default function Home() {
           {ROW_1_NEWS.map((article) => (
             <Link 
               key={article.id} 
-              href={`/articles/${article.slug}`} 
+              href={`/articles?slug=${article.slug}`} 
               className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col"
             >
               <img src={article.imageUrl} alt={article.title} className="aspect-video w-full object-cover border-b border-zinc-100" />
@@ -771,7 +771,7 @@ export default function Home() {
           {ROW_2_NEWS.map((article) => (
             <Link 
               key={article.id} 
-              href={`/articles/${article.slug}`} 
+              href={`/articles?slug=${article.slug}`} 
               className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col"
             >
               <img src={article.imageUrl} alt={article.title} className="aspect-video w-full object-cover border-b border-zinc-100" />
@@ -789,7 +789,7 @@ export default function Home() {
           {ROW_3_NEWS.map((article) => (
             <Link 
               key={article.id} 
-              href={`/articles/${article.slug}`} 
+              href={`/articles?slug=${article.slug}`} 
               className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col"
             >
               <img src={article.imageUrl} alt={article.title} className="aspect-video w-full object-cover border-b border-zinc-100" />
@@ -839,7 +839,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              <Link href={`/articles/${CAT_NATIONAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+              <Link href={`/articles?slug=${CAT_NATIONAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={CAT_NATIONAL_FEATURED.imageUrl} alt={CAT_NATIONAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -851,7 +851,7 @@ export default function Home() {
                 {CAT_NATIONAL_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_NATIONAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -875,7 +875,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              <Link href={`/articles/${CAT_POLITICS_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+              <Link href={`/articles?slug=${CAT_POLITICS_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={CAT_POLITICS_FEATURED.imageUrl} alt={CAT_POLITICS_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -887,7 +887,7 @@ export default function Home() {
                 {CAT_POLITICS_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_POLITICS_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -911,7 +911,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
-              <Link href={`/articles/${CAT_INT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+              <Link href={`/articles?slug=${CAT_INT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={CAT_INT_FEATURED.imageUrl} alt={CAT_INT_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -923,7 +923,7 @@ export default function Home() {
                 {CAT_INT_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_INT_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -981,7 +981,7 @@ export default function Home() {
                 {CAT_ECONOMY_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-3.5 ${
                       index !== CAT_ECONOMY_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1100,7 +1100,7 @@ export default function Home() {
                 {CAT_INTERVIEW_LIST.map((item, idx) => (
                   <Link 
                     key={item.id}
-                    href={`/articles/${item.slug}`}
+                    href={`/articles?slug=${item.slug}`}
                     className={`flex gap-3 group items-center py-2 ${
                       idx !== CAT_INTERVIEW_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1149,7 +1149,7 @@ export default function Home() {
 
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Link href={`/articles/${SPORTS_TOP_1.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
+                <Link href={`/articles?slug=${SPORTS_TOP_1.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
                   <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
                     <img src={SPORTS_TOP_1.imageUrl} alt={SPORTS_TOP_1.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                   </div>
@@ -1160,7 +1160,7 @@ export default function Home() {
                   </div>
                 </Link>
 
-                <Link href={`/articles/${SPORTS_TOP_2.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
+                <Link href={`/articles?slug=${SPORTS_TOP_2.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
                   <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
                     <img src={SPORTS_TOP_2.imageUrl} alt={SPORTS_TOP_2.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                   </div>
@@ -1174,7 +1174,7 @@ export default function Home() {
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {SPORTS_BOTTOM_LIST.map((item) => (
-                  <Link key={item.id} href={`/articles/${item.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
+                  <Link key={item.id} href={`/articles?slug=${item.slug}`} className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-md transition group flex flex-col">
                     <div className="aspect-[4/3] w-full overflow-hidden bg-zinc-100 border-b border-zinc-100">
                       <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                     </div>
@@ -1200,7 +1200,7 @@ export default function Home() {
 
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               
-              <Link href={`/articles/${OPINION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
+              <Link href={`/articles?slug=${OPINION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[4/3] w-full">
                 <img src={OPINION_FEATURED.imageUrl} alt={OPINION_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -1210,7 +1210,7 @@ export default function Home() {
               </Link>
 
               <div className="border-t border-zinc-100 pt-3">
-                <Link href={`/articles/${OPINION_LIST_ITEM.slug}`} className="group block text-xs sm:text-sm font-bold text-zinc-800 hover:text-[#cc0000] leading-snug transition">
+                <Link href={`/articles?slug=${OPINION_LIST_ITEM.slug}`} className="group block text-xs sm:text-sm font-bold text-zinc-800 hover:text-[#cc0000] leading-snug transition">
                   ▪ {OPINION_LIST_ITEM.title}
                 </Link>
               </div>
@@ -1276,7 +1276,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               {/* Featured overlay card */}
-              <Link href={`/articles/${CAT_SPECIAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+              <Link href={`/articles?slug=${CAT_SPECIAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
                 <img src={CAT_SPECIAL_FEATURED.imageUrl} alt={CAT_SPECIAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -1289,7 +1289,7 @@ export default function Home() {
                 {CAT_SPECIAL_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_SPECIAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1314,7 +1314,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               {/* Featured overlay card */}
-              <Link href={`/articles/${CAT_COURT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+              <Link href={`/articles?slug=${CAT_COURT_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
                 <img src={CAT_COURT_FEATURED.imageUrl} alt={CAT_COURT_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -1327,7 +1327,7 @@ export default function Home() {
                 {CAT_COURT_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_COURT_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1352,7 +1352,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               {/* Featured overlay card with red label above headline */}
-              <Link href={`/articles/${CAT_CAPITAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+              <Link href={`/articles?slug=${CAT_CAPITAL_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
                 <img src={CAT_CAPITAL_FEATURED.imageUrl} alt={CAT_CAPITAL_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-4">
                   {CAT_CAPITAL_FEATURED.label && (
@@ -1368,7 +1368,7 @@ export default function Home() {
                 {CAT_CAPITAL_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_CAPITAL_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1398,7 +1398,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               {/* Featured overlay card */}
-              <Link href={`/articles/${CAT_EDUCATION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+              <Link href={`/articles?slug=${CAT_EDUCATION_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
                 <img src={CAT_EDUCATION_FEATURED.imageUrl} alt={CAT_EDUCATION_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -1411,7 +1411,7 @@ export default function Home() {
                 {CAT_EDUCATION_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_EDUCATION_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1436,7 +1436,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               {/* Featured overlay card */}
-              <Link href={`/articles/${CAT_HEALTH_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+              <Link href={`/articles?slug=${CAT_HEALTH_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
                 <img src={CAT_HEALTH_FEATURED.imageUrl} alt={CAT_HEALTH_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -1449,7 +1449,7 @@ export default function Home() {
                 {CAT_HEALTH_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_HEALTH_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}
@@ -1474,7 +1474,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-zinc-200 rounded-xl p-3.5 space-y-4 shadow-sm flex flex-col justify-between">
               {/* Featured overlay card */}
-              <Link href={`/articles/${CAT_SCI_TECH_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
+              <Link href={`/articles?slug=${CAT_SCI_TECH_FEATURED.slug}`} className="group block relative overflow-hidden rounded-xl border border-zinc-100 aspect-[16/10] w-full">
                 <img src={CAT_SCI_TECH_FEATURED.imageUrl} alt={CAT_SCI_TECH_FEATURED.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
                   <h4 className="text-xs sm:text-sm font-extrabold text-white group-hover:text-amber-300 leading-snug transition line-clamp-2">
@@ -1487,7 +1487,7 @@ export default function Home() {
                 {CAT_SCI_TECH_LIST.map((item, index) => (
                   <Link 
                     key={item.id} 
-                    href={`/articles/${item.slug}`} 
+                    href={`/articles?slug=${item.slug}`} 
                     className={`flex gap-3 group items-center py-2 ${
                       index !== CAT_SCI_TECH_LIST.length - 1 ? "border-b border-zinc-100" : ""
                     }`}

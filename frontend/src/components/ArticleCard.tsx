@@ -13,7 +13,7 @@ export default function ArticleCard({ article }: { article: Article }) {
   const imageUrl = article.imageUrl || "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80";
 
   return (
-    <Link href={`/articles/${article.slug}`} className="group block">
+    <Link href={`/articles?slug=${article.slug}`} className="group block">
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/5 flex flex-col h-full">
         <div className="relative aspect-video w-full overflow-hidden bg-zinc-800">
           <img

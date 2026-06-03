@@ -8,6 +8,9 @@
 # TypeScript build output
 **/dist/
 
+# Backend static files (compiled at build time)
+**/backend/public/
+
 # Env files
 **/.env
 **/.env.local

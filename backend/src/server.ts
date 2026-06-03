@@ -16,6 +16,9 @@ app.use(express.json());
 // Serve static uploaded files
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, "..", "public")));
+
 app.use(uploadRouter);
 
 /* ---------- MENU CRUD ROUTES ---------- */
@@ -144,6 +147,11 @@ app.delete("/api/articles/:slug", adminAuth, async (req: Request, res: Response)
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
+});
+
+// Fallback to Next.js index.html for client-side routing (admin, detail pages, etc.)
+app.get("*", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 /* ---------- Server bootstrap ---------- */

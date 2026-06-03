@@ -72,9 +72,19 @@ export default function Admin() {
 
   const editorRef = useRef<HTMLDivElement>(null);
 
+  const getApiUrl = () => {
+    if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+    if (typeof window !== "undefined") {
+      if (window.location.hostname === "localhost" && window.location.port === "3000") {
+        return "http://localhost:5000";
+      }
+    }
+    return "";
+  };
+
   const fetchAdminMenus = async () => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const apiUrl = getApiUrl();
       const res = await fetch(`${apiUrl}/api/menus`);
       if (res.ok) {
         const data = await res.json();
@@ -120,7 +130,7 @@ export default function Admin() {
     };
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const apiUrl = getApiUrl();
       const token = adminToken || process.env.NEXT_PUBLIC_ADMIN_TOKEN || "sonali-admin-secret-2026";
       const res = await fetch(`${apiUrl}/api/menus`, {
         method: "POST",
@@ -167,7 +177,7 @@ export default function Admin() {
     setMenuStatus("loading");
     setMenuMessage("");
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const apiUrl = getApiUrl();
       const token = adminToken || process.env.NEXT_PUBLIC_ADMIN_TOKEN || "sonali-admin-secret-2026";
       const res = await fetch(`${apiUrl}/api/menus/${editingMenu.id}`, {
         method: "PUT",
@@ -211,7 +221,7 @@ export default function Admin() {
     setMenuStatus("loading");
     setMenuMessage("");
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const apiUrl = getApiUrl();
       const token = adminToken || process.env.NEXT_PUBLIC_ADMIN_TOKEN || "sonali-admin-secret-2026";
       const res = await fetch(`${apiUrl}/api/menus/${id}`, {
         method: "DELETE",
@@ -299,7 +309,7 @@ export default function Admin() {
     
     setUploading(true);
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const apiUrl = getApiUrl();
       const token = adminToken || process.env.NEXT_PUBLIC_ADMIN_TOKEN || "sonali-admin-secret-2026";
       const res = await fetch(`${apiUrl}/api/upload`, {
         method: "POST",
@@ -357,7 +367,7 @@ export default function Admin() {
     };
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const apiUrl = getApiUrl();
       const token = adminToken || process.env.NEXT_PUBLIC_ADMIN_TOKEN || "sonali-admin-secret-2026";
       
       const res = await fetch(`${apiUrl}/api/articles`, {

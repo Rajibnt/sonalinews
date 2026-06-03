@@ -3,8 +3,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReactMarkdown from "react-markdown";
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 type Article = {
   id: number;
@@ -15,19 +15,31 @@ type Article = {
   imageUrl?: string;
 };
 
-export default function ArticleDetail() {
-  const params = useParams();
-  const slug = params?.slug as string;
+function ArticleDetailContent() {
+  const searchParams = useSearchParams();
+  const slug = searchParams ? searchParams.get("slug") : null;
   
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!slug) return;
+    if (!slug) {
+      setLoading(false);
+      return;
+    }
     
     const fetchArticle = async () => {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const getApiUrl = () => {
+          if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+          if (typeof window !== "undefined") {
+            if (window.location.hostname === "localhost" && window.location.port === "3000") {
+              return "http://localhost:5000";
+            }
+          }
+          return "";
+        };
+        const apiUrl = getApiUrl();
         const res = await fetch(`${apiUrl}/api/articles/${slug}`);
         if (res.ok) {
           const data = await res.json();
@@ -116,5 +128,21 @@ export default function ArticleDetail() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function ArticleDetail() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex flex-col bg-zinc-950 text-white">
+        <Header />
+        <main className="flex-grow flex items-center justify-center">
+          <div className="text-zinc-400 font-bold">লোড হচ্ছে...</div>
+        </main>
+        <Footer />
+      </div>
+    }>
+      <ArticleDetailContent />
+    </Suspense>
   );
 }
